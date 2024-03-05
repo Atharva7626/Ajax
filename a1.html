@@ -1,0 +1,42 @@
+<html>
+
+<head>
+<script src="text/javascript">
+    function display ()
+    {
+
+        var n=new XMLHttpRequest();
+
+
+        n.open("GET","contact.dat",true);
+
+        n.send();
+
+        n.onreadystatechange=function()
+        {
+            if (n.readyState==4)
+            {
+                 if ( n.status==200)
+                 {
+                     document.getElementById('show').innerHTML=n.responseText;
+                 }
+            }
+        }
+
+    }
+</script>
+</head>
+<body>
+
+    Press to read contact file : <button onclick="display()"> Click here </button>
+
+    <p id="show"></p>
+
+
+</body>
+
+
+
+
+
+</html>
